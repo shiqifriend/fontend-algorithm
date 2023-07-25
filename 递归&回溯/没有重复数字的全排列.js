@@ -44,3 +44,8 @@ function permute( num ) {
 module.exports = {
     permute : permute
 };
+
+// 要点
+// 1：将问题想象为状态空间树 -->如何遍历树，得到叶子结点 2：设置状态变量，
+// depth,path,visited.用来记录当前遍历节点的状态 3：递归是在for循环中实现
+// 的，注意回溯需要重置状态。递归的出口是当前结果的长度与原数组长度一致。
