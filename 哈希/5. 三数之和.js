@@ -3,7 +3,7 @@
 // 注意：
 // 三元组（a、b、c）中的元素必须按非降序排列。（即a≤b≤c）
 // 解集中不能包含重复的三元组。
-// 例如，给定的数组 S = {-10 0 10 20 -10 -40},解集为(-10, -10, 20),(-10, 0, 10) 
+// 例如，给定的数组 S = {-10 0 10 20 -10 -40},解集为(-10, -10, 20),(-10, 0, 10)
 // 输入：
 // [-2,0,1,1,2]
 // 复制
@@ -13,11 +13,10 @@
 /**
  * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
  *
- * 
- * @param num int整型一维数组 
+ *
+ * @param num int整型一维数组
  * @return int整型二维数组
  */
-
 
 // 双指针，
 // 首先将num数组进行排序
@@ -32,30 +31,30 @@
 // 假设目标值是-20，如果采用num[i]==num[i+1]的判断条件，则第一个和第二个-10均会continue，从而找
 // 不到-20， 然而-10和-10的组合可以得到-20
 
-function threeSum( num ) {
-    if(num.length < 3) return []
-    num = num.sort((a, b) => a - b)
-    const res = []
-    const n = num.length
-    for(let i = 0; i < n; i++) {
-        if(i!==0 && num[i] == num[i-1]) continue
-        let left = i+1
-        let right = n-1
-        let target = -num[i]
-        while(left < right) {
-            if(num[left] + num[right] < target) left++
-            else if(num[left] + num[right] > target) right--
-            else {
-                res.push([num[i], num[left], num[right]])
-                while(left+1<right && num[left]==num[left+1]) left++
-                while(left<right-1 && num[right]==num[right+1]) right--
-                left++
-                right--
-            }
-        }
+function threeSum(num) {
+  if (num.length < 3) return [];
+  num = num.sort((a, b) => a - b);
+  const res = [];
+  const n = num.length;
+  for (let i = 0; i < n; i++) {
+    if (i !== 0 && num[i] == num[i - 1]) continue;
+    let left = i + 1;
+    let right = n - 1;
+    let target = -num[i];
+    while (left < right) {
+      if (num[left] + num[right] < target) left++;
+      else if (num[left] + num[right] > target) right--;
+      else {
+        res.push([num[i], num[left], num[right]]);
+        while (left + 1 < right && num[left] == num[left + 1]) left++;
+        while (left < right - 1 && num[right] == num[right - 1]) right--;
+        left++;
+        right--;
+      }
     }
-    return res
+  }
+  return res;
 }
 module.exports = {
-    threeSum : threeSum
+  threeSum: threeSum,
 };
