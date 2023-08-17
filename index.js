@@ -27,5 +27,5 @@ console.log(array);  // 输出: [3,
 
 
 
-console.log(111);
+console.log(JSON.stringify(112n));
 // console.log( "1",JSON.stringify(122222222222222222222n));
