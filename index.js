@@ -25,7 +25,18 @@ for(let i = 0; i < array.length-1; i++) {
 
 console.log(array);  // 输出: [3, 
 
+function foo( n)
+{
+  if (n < 2) return n;
+return foo(n - 1) + foo(n - 2);
+}
 
 
-console.log(111);
+console.log(JSON.stringify( {
+  a: 3,
+  b: 4,
+  c: null,
+  d: undefined,
+  get e() {},
+}));
 // console.log( "1",JSON.stringify(122222222222222222222n));

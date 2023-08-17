@@ -1,0 +1,1 @@
+// 如何使用 async/await 实现 Promise.all 的效果
