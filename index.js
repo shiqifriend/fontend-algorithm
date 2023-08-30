@@ -39,3 +39,12 @@ console.log(JSON.stringify( {
   get e() {},
 }));
 // console.log( "1",JSON.stringify(122222222222222222222n));
+
+
+
+const arr = [1,2,3,4,5]
+let i = 0
+arr.map(item=>{
+  if(item === 3) arr.push(6)
+  console.log(i++)
+})
