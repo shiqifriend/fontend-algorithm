@@ -1,3 +1,5 @@
+const path = require('path')
+
 function change(obj, strArr = []) {
   if (!(obj instanceof Object)) return obj;
   for (let key in obj) {
@@ -48,3 +50,12 @@ arr.map(item=>{
   if(item === 3) arr.push(6)
   console.log(i++)
 })
+
+
+const packageJsonPath = require.resolve(`./index.js`, {
+  paths: [ './leetcode100', './asd'],
+})
+
+const directory = path.join(packageJsonPath, '../')
+console.log(packageJsonPath)
+console.log(directory)
