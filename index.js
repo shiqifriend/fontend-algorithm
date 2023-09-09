@@ -52,10 +52,18 @@ arr.map(item=>{
 })
 
 
-const packageJsonPath = require.resolve(`./index.js`, {
-  paths: [ './leetcode100', './asd'],
-})
+// const packageJsonPath = require.resolve(`./index.js`, {
+//   paths: [ './leetcode100', './asd'],
+// })
 
-const directory = path.join(packageJsonPath, '../')
-console.log(packageJsonPath)
-console.log(directory)
+// const directory = path.join(packageJsonPath, '../')
+// console.log(packageJsonPath)
+// console.log(directory)
+
+
+const foo1=(a,b)=>a+b
+const a = foo1(1,4)
+const obj = {
+  a:a
+}
+console.log(obj)
